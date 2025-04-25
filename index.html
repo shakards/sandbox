@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- [Previous meta tags and title remain the same] -->
+  <style>
+    /* Syntax highlighting for the editor */
+    #code-editor {
+      color: #000; /* Default text color */
+    }
+    #code-editor .tag { color: #0000ff; }       /* Blue for HTML tags */
+    #code-editor .attr { color: #ff0000; }      /* Red for attributes */
+    #code-editor .val { color: #a31515; }       /* Dark red for values */
+    #code-editor .selector { color: #800000; }  /* Maroon for CSS selectors */
+    #code-editor .property { color: #ff00ff; }  /* Purple for CSS properties */
+  </style>
+</head>
+<body>
+  <!-- [Previous HTML remains the same until the editor section] -->
+
+  <!-- Updated Editor Section with Syntax Highlighting -->
+  <div class="editor-page" id="editorPage">
+    <div class="editor-container">
+      <div class="editor-header">
+        <span>Tryit Editor v3.7</span>
+        <button class="close-button" onclick="hideEditor()">×</button>
+      </div>
+      <div class="editor-body">
+        <div class="button-container">
+          <button class="run-button" onclick="runCode()">Run »</button>
+        </div>
+        <div class="code-container">
+          <div class="code-column">
+            <div class="code-header">
+              HTML/CSS
+            </div>
+            <!-- Using a contenteditable div with spans for syntax highlighting -->
+            <div id="code-editor" contenteditable="true" spellcheck="false">
+              <span class="tag">&lt;!DOCTYPE html&gt;</span><br>
+              <span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"en"</span><span class="tag">&gt;</span><br>
+              <span class="tag">&lt;head&gt;</span><br>
+              &nbsp;&nbsp;<span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span><span class="tag">&gt;</span><br>
+              &nbsp;&nbsp;<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"viewport"</span> <span class="attr">content</span>=<span class="val">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span><br>
+              &nbsp;&nbsp;<span class="tag">&lt;title&gt;</span>Loader<span class="tag">&lt;/title&gt;</span><br>
+              &nbsp;&nbsp;<span class="tag">&lt;style&gt;</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.loader</span> {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">--R</span>: <span class="val">30px</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">--g1</span>: <span class="val">#514b82 96%</span>, <span class="val">#0000</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">--g2</span>: <span class="val">#eeeeee 96%</span>, <span class="val">#0000</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>: <span class="val">calc(2*var(--R))</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">aspect-ratio</span>: <span class="val">1</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">border-radius</span>: <span class="val">50%</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>: <span class="val">grid</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">-webkit-mask</span>: <span class="val">linear-gradient(#000 0 0)</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">animation</span>: <span class="val">l30 2s infinite linear</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.loader::before</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.loader::after</span> {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">content</span>: <span class="val">""</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">grid-area</span>: <span class="val">1/1</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">width</span>: <span class="val">50%</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R) - var(--R))</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R) - var(--R))</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">radial-gradient(farthest-side,var(--g2)) calc(var(--R) + 0.5*var(--R) - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R))</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">radial-gradient(farthest-side,var(--g1)) 0 calc(-1*var(--R))</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">radial-gradient(farthest-side,var(--g2)) calc(var(--R) - 0.5*var(--R) - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R))</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R) - var(--R))</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">radial-gradient(farthest-side,var(--g2)) calc(-1*var(--R)) 0</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) + 0.5*var(--R) - var(--R))</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-size</span>: <span class="val">calc(2*var(--R)) calc(2*var(--R))</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background-repeat</span>: <span class="val">no-repeat</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">.loader::after</span> {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transform</span>: <span class="val">rotate(180deg)</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">transform-origin</span>: <span class="val">right</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">@keyframes</span> <span class="selector">l30</span> {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">100%</span> { <span class="property">transform</span>: <span class="val">rotate(-1turn)</span>; }<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="selector">body</span> {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">display</span>: <span class="val">flex</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">justify-content</span>: <span class="val">center</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">align-items</span>: <span class="val">center</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">height</span>: <span class="val">100vh</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">margin</span>: <span class="val">0</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">background</span>: <span class="val">#f5f5f5</span>;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              &nbsp;&nbsp;<span class="tag">&lt;/style&gt;</span><br>
+              <span class="tag">&lt;/head&gt;</span><br>
+              <span class="tag">&lt;body&gt;</span><br>
+              &nbsp;&nbsp;<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"loader"</span><span class="tag">&gt;&lt;/div&gt;</span><br>
+              <span class="tag">&lt;/body&gt;</span><br>
+              <span class="tag">&lt;/html&gt;</span>
+            </div>
+          </div>
+          <div class="result-column">
+            <div class="code-header">
+              Result
+            </div>
+            <iframe id="result"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to run the code in the iframe (now handles the styled content)
+    function runCode() {
+      const codeElement = document.getElementById('code-editor');
+      // Get raw text content without HTML tags
+      const code = codeElement.innerText || codeElement.textContent;
+      const iframe = document.getElementById('result');
+      iframe.srcdoc = code;
+    }
+  </script>
+</body>
+</html>
